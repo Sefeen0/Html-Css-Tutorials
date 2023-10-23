@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body {
+  font-family: fantasy;
+  text-transform: capitalize;
+}
+form {
+  background-color: #ddd;
+  margin: 20px auto;
+  width: 400px;
+  padding: 10px;
+}
+div {
+  padding: 5px 0;
+}
+label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: 0.5s;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+label::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #0075ff;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transform: translate(0, 0);
+}
+input[type="radio"]:checked + label::after,
+input[type="radio"]:not(:checked):hover + label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #0075ff;
+  left: 4px;
+  top: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+input[type="radio"]:not(:checked):hover + label::after {
+  background-color: #0075ff;
+  opacity: 0.2;
+}
+input[type="radio"]:checked + label {
+  color: #0075ff;
+}
